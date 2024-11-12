@@ -1,8 +1,12 @@
-Digite o seguinte comando:
+Scan basico MFT:
 
-chkdsk e: /f /r /x
+chkdsk d: /f
 
-"e" significa a letra da unidade da partição que você deseja reparar;
+Scan Completo:
+
+chkdsk d: /f /r /x
+
+"d" significa a letra da unidade da partição que você deseja reparar;
 chkdsk/f está sendo executado para corrigir os erros encontrados;
 chkdsk/r está sendo executado para localizar setores defeituosos e recuperar qualquer informação legível;
 chkdsk/x estásendo executado para forçar o volume que você está prestes a verificar para ser desmontado antes que o utilitário comece uma verificação.
