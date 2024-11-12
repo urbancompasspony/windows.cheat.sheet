@@ -19,6 +19,6 @@ Parâmetros:
 /X: Use esta opção somente com o NTFS. Ela força primeiro a desmontagem do volume, se necessário. Todos os identificadores abertos para a unidade serão invalidados. A opção /x também inclui a funcionalidade da opção /f.
 /I: Use esta opção somente com o NTFS. Efetua uma verificação menos rígida das entradas de índice, reduzindo o tempo necessário para a execução de chkdsk.
 /C: Use esta opção somente com o NTFS. Ela ignora a verificação de ciclos dentro da estrutura de pastas, reduzindo o tempo necessário para a execução de chkdsk.
-/P: Comando verificará o estado da mídia do disco. Citação da Microsoft diz "Executa uma verificação exaustiva, mesmo que o disco não esteja marcado para que o chkdsk seja executado. Esse parâmetro não faz qualquer alteração para a unidade" - (Traduzido do Original em Inglês - pelo google tradutor).[6][7]
+/P: Comando verificará o estado da mídia do disco. Citação da Microsoft diz "Executa uma verificação exaustiva, mesmo que o disco não esteja marcado para que o chkdsk seja executado. Esse parâmetro não faz qualquer alteração para a unidade"
 /L: [:tamanho] Use esta opção somente com o NTFS. Ela utilizará o tamanho digitado por você em vez do tamanho do arquivo de log. Se você omitir o parâmetro de tamanho, /l exibirá o tamanho atual.
 /?: Exibe informações de ajuda no prompt de comando.
