@@ -1,12 +1,14 @@
-Etapa 3. Digite o seguinte comando: chkdsk e: /f /r /x
+Digite o seguinte comando:
+
+chkdsk e: /f /r /x
 
 "e" significa a letra da unidade da partição que você deseja reparar;
 chkdsk/f está sendo executado para corrigir os erros encontrados;
 chkdsk/r está sendo executado para localizar setores defeituosos e recuperar qualquer informação legível;
 chkdsk/x estásendo executado para forçar o volume que você está prestes a verificar para ser desmontado antes que o utilitário comece uma verificação.
-  
-Parâmetros
-  
+
+Parâmetros:
+
 /F: Corrige erros no disco. O disco deve ser bloqueado. Se chkdsk não puder bloquear a unidade, será exibida uma mensagem perguntando se você deseja verificar a unidade na próxima vez que reiniciar o computador.
 /V: Exibe o nome de todos os arquivos contidos em cada pasta à medida que o disco é verificado.
 /R: Localiza setores defeituosos e recupera informações legíveis. O disco deve ser bloqueado.
