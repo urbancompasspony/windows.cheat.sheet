@@ -1,2 +1,3 @@
 # windows.cheat.sheet
-Windows Commandline!
+
+Use MiniWindows or STRELEC for this.
