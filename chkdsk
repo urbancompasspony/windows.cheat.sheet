@@ -1,0 +1,18 @@
+Etapa 3. Digite o seguinte comando: chkdsk e: /f /r /x
+
+"e" significa a letra da unidade da partição que você deseja reparar;
+chkdsk/f está sendo executado para corrigir os erros encontrados;
+chkdsk/r está sendo executado para localizar setores defeituosos e recuperar qualquer informação legível;
+chkdsk/x estásendo executado para forçar o volume que você está prestes a verificar para ser desmontado antes que o utilitário comece uma verificação.
+  
+Parâmetros
+  
+/F: Corrige erros no disco. O disco deve ser bloqueado. Se chkdsk não puder bloquear a unidade, será exibida uma mensagem perguntando se você deseja verificar a unidade na próxima vez que reiniciar o computador.
+/V: Exibe o nome de todos os arquivos contidos em cada pasta à medida que o disco é verificado.
+/R: Localiza setores defeituosos e recupera informações legíveis. O disco deve ser bloqueado.
+/X: Use esta opção somente com o NTFS. Ela força primeiro a desmontagem do volume, se necessário. Todos os identificadores abertos para a unidade serão invalidados. A opção /x também inclui a funcionalidade da opção /f.
+/I: Use esta opção somente com o NTFS. Efetua uma verificação menos rígida das entradas de índice, reduzindo o tempo necessário para a execução de chkdsk.
+/C: Use esta opção somente com o NTFS. Ela ignora a verificação de ciclos dentro da estrutura de pastas, reduzindo o tempo necessário para a execução de chkdsk.
+/P: Comando verificará o estado da mídia do disco. Citação da Microsoft diz "Executa uma verificação exaustiva, mesmo que o disco não esteja marcado para que o chkdsk seja executado. Esse parâmetro não faz qualquer alteração para a unidade" - (Traduzido do Original em Inglês - pelo google tradutor).[6][7]
+/L: [:tamanho] Use esta opção somente com o NTFS. Ela utilizará o tamanho digitado por você em vez do tamanho do arquivo de log. Se você omitir o parâmetro de tamanho, /l exibirá o tamanho atual.
+/?: Exibe informações de ajuda no prompt de comando.
