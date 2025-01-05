@@ -1,0 +1,19 @@
+
+CMD.exe as Admin
+
+net stop bits
+net stop wuauserv
+net stop cryptsvc
+ren %systemroot%\softwaredistribution softwaredistribution.bak
+ren %systemroot%\system32\catroot2 catroot2.bak
+net start bits
+net start wuauserv
+net start cryptsvc
+
+Reboot.
+If the error persists:
+
+dism.exe /online /cleanup-image /scanhealth
+dism.exe /online /cleanup-image /restorehealth
+dism.exe /online /cleanup-image /startcomponentcleanup
+sfc /scannow
