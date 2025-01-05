@@ -1,0 +1,18 @@
+
+https://github.com/pal1000/mesa-dist-win/releases
+
+Download:
+mesa3d-24.3.2-release-msvc.7z
+
+Why MSVC?
+MinGW is for Linux.
+MSVC is a Windows native tool chain and runtime for building C/C++ executables.
+MSVC will provide you with VS tools such as MFC, ATL, DirectX and GDI+.
+
+Extract and run systemwidedeploy.cmd in a command prompt.
+
+Select the first option
+1. Core desktop OpenGL drivers
+
+USe "GPU Caps Viewer" to test!
+https://www.geeks3d.com/dlz/
