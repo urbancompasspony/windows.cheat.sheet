@@ -1,0 +1,15 @@
+
+SHIFT + F10
+regedit
+
+HKEY_LOCAL_MACHINE > SYSTEM > Setup
+Create a new registry key under Setup and name it LabConfig
+
+Within  LabConfig, create DWORDs values called:
+
+BypassTPMCheck
+BypassSecureBootCheck 
+
+and set each to 1
+
+And add a DWORD values for BypassRAMCheck
