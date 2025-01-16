@@ -2,7 +2,11 @@
 When asking for email, do:
 Shift+F10
 
+oobe\bypassnro
 OOBE\BYPASSNRO
+
+if keyboard wrong, copy from C:\ path
+
 No spaces.
 System will reboot.
 
