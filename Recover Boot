@@ -1,0 +1,26 @@
+With Linux:
+
+sudo grub-install --target=x86_64-efi /dev/sda --efi-directory=/media/efi --boot-directory=/media/root/boot
+
+insmod part_gpt
+insmod chain
+set root=(hd0,gpt1)
+chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+boot
+
+Inside Windows:
+
+cd EFI\Microsoft\Boot
+bcdedit /createstore BCD
+bcdedit /store BCD  /create {bootmgr} /d “Windows Boot Manager”
+bcdedit /store BCD /create /d “My Windows 10” /application osloader
+
+bcdedit /store BCD /set {bootmgr} default {your_guid}
+bcdedit /store BCD /set {bootmgr} path \EFI\Microsoft\Boot\bootmgfw.efi
+bcdedit /store BCD /set {bootmgr} displayorder {default}
+
+bcdedit /store BCD /set {default} device partition=c:
+bcdedit /store BCD /set {default} osdevice partition=c:
+bcdedit /store BCD /set {default} path \Windows\System32\winload.efi
+bcdedit /store BCD /set {default} systemroot \Windows
+exit
