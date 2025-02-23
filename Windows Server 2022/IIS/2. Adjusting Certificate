@@ -1,0 +1,13 @@
+
+PowerShell:
+New-SelfSignedCertificate -FriendlyName FrameFlow -DnsName FrameFlow -CertStoreLocation Cert:\LocalMachine\My -KeyUsage DigitalSignature
+
+Next, open IIS Manager and you should find your new self-signed certificate under "Server Certificates".
+To apply your changes, navigate to the "Sites" folder in the left-hand tree structure of the IIS Manager and find your website (Default Web Site).
+Right-click on it and choose "Edit Bindings".
+
+In the box that pops up, select your site binding HTTPS and choose "Edit" from the right-hand menu.
+
+This will open a new window. At the bottom of this window, you'll see a dropdown chooser labeled "SSL Certificate".
+Use this dropdown to select your certificate. Click "OK" when you're done.
+
