@@ -1,3 +1,3 @@
 # IIS
 
-Use it to start REMOTE APPs!
+For REMOTE APPS CONFIGURATION!
