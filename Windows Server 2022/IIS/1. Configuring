@@ -1,0 +1,34 @@
+1. Go to the Server Manager Dashboard and go to the Add functions and features option.
+
+2. Choose the “Install Remote Desktop Services” option and then click “Next”.
+
+3. Choose the “Quick Start” option and then go to “Next”.
+
+4. Choose the “Session-based desktop” deployment option and then Next.
+
+5. Check that the server appears in the Server Pool, also check that your computer is selected next to it and below you can check the account that will be used for deployment, after confirming everything, click on Next.
+
+6. Check the option to Restart the target server automatically if required and then go to Deploy.
+
+7. It will install a few packages, after which it will show that it has finished.
+
+8. Go to the “Remote Desktop Services” option.
+
+9. You will see 4 options on your left, go to QuickSessionCollection, which will determine the programs that will go to RemoteAPP,
+in the center of the screen you will have the priority field, Remote APP programs which is where we will add our shared programs and host servers, 
+in this case, only the server and on the right will give you control of who is connected to RemoteApp.
+
+10. To add a new program, simply go to “Tasks”, next to the description of “RemoteAPP Programs” and then “Publish RemoteApp Programs”.
+
+11. This new window will show all the programs that are installed on the server machine.
+
+12.1. If your program doesn’t appear, you can click on “Add” and search for the executable so that it appears in the selection window.
+
+13. After selecting the program, simply click on “Next”.
+
+14. Check that all the selected programs are appearing correctly, if so, press “Publish”, if not, press “Previous” and repeat steps 12 and 12.1.
+
+15. When you’ve finished, just click “Close” and the configuration is complete.
+
+Access:
+https://192.168.x.y/RDWeb
