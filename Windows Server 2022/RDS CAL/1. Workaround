@@ -1,0 +1,10 @@
+Para redefinir o período de tolerância do licenciamento de RDS, execute as seguintes etapas:
+No host da sessão de RD, inicie o Registry Editor (regedit) como administrador.
+No regedit, navegue até HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\GracePeriod.
+Dentro dessa chave de registro, há uma entrada REG_BINARY, cujo nome começa com a string L$RTMTIMEBOMB.
+(Provavelmente, essa é a única entrada da chave.) As permissões padrão nessa entrada não permitem que ela seja modificada ou excluída. Portanto, essas permissões precisam ser alteradas
+No painel esquerdo do regedit, clique com o botão direito na pasta GracePeriod e selecione Permissions.
+Na janela Permissions exibida, selecione Administrators e atribua a esse grupo as permissões Full Control. Clique em OK para fechar a janela.
+Clique com o botão direito na entrada do registro L$RTMTIMEBOMB... e selecione Delete. Clique em Yes para confirmar a exclusão.
+Saia do regedit.
+Reinicialize o servidor host da sessão de RD para que a alteração do registro seja aplicada.
