@@ -1,1 +1,7 @@
 
+REMOVE RDS ROLE
+
+INSTALL RDP WRAPPER
+
+APPLY:
+https://github.com/sebaxakerhtc/rdpwrap.ini
