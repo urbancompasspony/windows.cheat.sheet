@@ -1,0 +1,14 @@
+
+Header Key: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+Create a new REG_DWORD with name NoAutoUpdate with value 1
+
+Open a CMD prompt as an Administrator, type SCONFIG and press ENTER
+Type 5 and press ENTER
+Type M for Manual and press ENTER
+
+Click START and type GPEDIT.MSC and press ENTER (or open the LOCAL GROUP POLICY MANAGEMENT and open an existing GPO or start a new one)
+Expand COMPUTER CONFIGURATION > ADMINISTRATIVE TEMPLATES > WINDOWS COMPONENTS > WINDOWS UPDATE
+Double click on CONFIGURE AUTOMATIC UPDATES
+Select either DISABLED (equivalent to MANUAL) or ENABLED and select what you would like from the drop down list
+
+On Updates Panel check for YOUR ORGANIZATION HVE TURN OFF WINDOWS UPDATES.
