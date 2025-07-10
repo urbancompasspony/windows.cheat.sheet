@@ -1,0 +1,108 @@
+# Main commands that can be made inside PowerShell
+
+# The same ones like Linux to manipulate folders:
+cp, rm, mkdir, ls, mv, etc...
+
+# Uptime:
+net statistics workstation
+
+# Service List that are Stopped:
+Get-Service | Where-Object {$_.status -eq "stopped"}
+
+# Service List but from name:
+Get-Service | Where-Object {$_.name -eq "XboxNetApiSvc"}
+
+# Processes List:
+Get-Process
+# The same but colored!
+Get-Process | ForEach-Object {Write-Host $_.name -foregroundcolor cyan}
+
+# Stop process:
+Stop-Process -processname notepad
+
+# Check if path/folder/file exists:
+Test-Path C:\Scripts\Archive
+
+# TaskScheduler for something and to run immediately:
+schtasks /create /SC ONCE /TN Name_Here /TR "C:/PATH/TO/APPLICATION.EXE" /ST 00:00
+schtasks /run /TN Name_Here
+TO DELETE: schtasks /delete /TN Name_Here /F
+
+# Show all drives and more!
+psdrive
+# Or just see free space in one drive (for example, C):
+(gdr c).Free/1gb
+
+# Get scheduled task list that are running:
+(get-scheduledtask).where({$_.state -eq 'running'})
+
+# Dump WiFi Passwords:
+netsh wlan show profiles
+# Or something more complex:
+(netsh wlan show profiles) | Select-String “\:(.+)$” | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=”$name” key=clear)} | Select-String “Key Content\W+\:(.+)$” | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize | Out-File $env:USERPROFILE\Desktop\Log.txt
+
+# Getting all IP LAN of all interfaces:
+Get-NetIPAddress -AddressFamily IPv4 | where-object IPAddress -notmatch "^(169)|(127)" | Sort-Object IPAddress | select IPaddress,Interface*
+
+# Uptime
+(get-date) – (gcim Win32_OperatingSystem).LastBootUpTime
+
+# for finding all drives that are mapped to drive letters
+ls function:[a-z]: -n|?{(test-path $_)}
+
+# to find available drive letters to map to
+ls function:[a-z]: -n|?{!(test-path $_)}
+
+# Show the last 10 erros from System Event:
+get-winevent -FilterHashtable @{Logname = 'System';Level=2} -MaxEvents 10 | sort-Object ProviderName,TimeCreated
+
+# DISKS
+# To initialize disk:
+Initialize-Disk -Number 1 -PartitionStyle GPT
+# Create a partition:
+New-Partition -DiskNumber 1 -Size 500MB -DriveLetter X
+# USing maximum size
+New-Partition -DiskNumber 1 -DriveLetter Y -UseMaximumSize
+# Format
+Format-Volume -DriveLetter X -FileSystem NTFS
+
+# How much RAM:
+(Get-WMIObject -class Win32_PhysicalMemory | Measure-Object -Property capacity -Sum | % {[Math]::Round(($_.sum / 1GB),2)})
+
+# System Installed Arch
+Get-CimInstance -ClassName Win32_ComputerSystem | Select-Object -Property SystemType
+
+# BIOS Details
+Get-CimInstance -ClassName Win32_BIOS
+
+# Host manufacturer and system details
+Get-CimInstance -ClassName Win32_ComputerSystem
+
+# Users and owners
+Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object -Property *user*
+
+# Currently logged in user
+Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName
+
+# View all mapped network drives:
+Get-PSDrive -PSProvider "FileSystem"
+
+# Map network driver and assign to letter:
+net use K: \\path\Share /Persistent:Yes
+# Or:
+New-PSDrive -Name "DRIVER-LETTER" -PSProvider "FileSystem" -Root "\\DEVICE-NAME-OR-IP\SHARED-FOLDER" -Persist
+# Example:
+New-PSDrive -Name "E" -PSProvider "FileSystem" -Root "\\vm-beta\ShareOne" -Persist
+
+# Remove network drive:
+Remove-PSDrive -Name E
+
+# Equivalent to WGET in Linux, download to working dir some file through powershell and change its name to something.zip.
+Invoke-WebRequest http://www.example.com/package.zip -OutFile packagenewname.zip
+
+# Turn OFF remotely:
+net use \\STATION\ipc$ /user:USER
+shutdown -s /C /Y /T:30 "msg" \\STATION
+
+MORE:
+https://github.com/janikvonrotz/awesome-powershell
