@@ -38,13 +38,6 @@ net start bits
 
 echo.
 echo ================================
-echo EXECUTANDO LIMPEZA DE DISCO
-echo ================================
-cleanmgr /sageset:1
-cleanmgr /sagerun:1
-
-echo.
-echo ================================
 echo LIMPEZA E MANUTENCAO CONCLUIDAS
 echo ================================
 pause
