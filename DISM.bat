@@ -1,7 +1,3 @@
-# Windows Cleanup and Maintenance Script
-# Para hospedar este arquivo e executar em 1 linha, use:
-# iwr -useb "https://seusite.com/cleanup.ps1" | iex
-
 # Verificar se está executando como administrador
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Host "Solicitando permissao de administrador..." -ForegroundColor Yellow
